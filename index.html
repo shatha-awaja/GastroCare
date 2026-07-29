@@ -9,24 +9,41 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    body {
-      padding-top: 60px;
-    }
+body {
+  padding-top: 85px;
+}
 
-    .carousel-caption {
-      top: 30%;
-      left: 13%;
-      right: 50%;
-      bottom: auto;
-      text-align: left;
-    }
+.navbar {
+  margin-top: 0;
+  padding: 15px 0;
+  z-index: 1050;
+}
+.navbar-nav .nav-item {
+    margin-left: 2px;
+}
+.nav-item active{
+  color: #008cff;
+}
+.carousel-caption {
+  top: 50%;
+  left: 13%;
+  right: auto;
+  bottom: auto;
+  transform: translateY(-50%);
+  text-align: left;
+  max-width: 520px;
+}
+.carousel-caption h1 {
+  font-size: 58px;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #111;
+}
 
-    .carousel-caption h1 {
-      color: black;
-      font-size: 55px;
-      font-weight: bold;
-    }
-
+.about-section{
+    padding:150px 0;      /* يزيد ارتفاع السكشن */
+}
     .carousel-caption p {
       color: rgb(57, 55, 55);
       font-size: 15px;
@@ -51,14 +68,16 @@
     }
 
     .navbar-nav .nav-item {
-      margin-left: 15px;
+      margin-right: 90px;
+      font-size: 60px;
     }
 
     .nav-link {
-      font-size: 15px;
-      font-weight: 500;
-      color: #333 !important;
-    }
+    font-size: 18px;      /* كان 15px */
+    font-weight:bold;
+    color: #333 !important;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
     /* Top Info Cards */
     .box {
@@ -322,12 +341,13 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top justify-content-between" style="padding: 8px;">
-  <a class="navbar-brand" style="color: #2d2f7b; font-size: 30px; font-weight: bold;" href="#">
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top justify-content-center" style="padding: 8px;">
+  <div class="container-fluid px-5">
+  <a class="navbar-brand" style="color: #2d2f7b; font-size: 40px; font-weight: bold; margin-left: 150px;" href="#">
     Gastro<span style="color: green;">Care</span>
   </a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -337,9 +357,14 @@
       <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown">
+        <a class="nav-link dropdown-toggle"
+       href="#"
+       id="navbarDropdown"
+       role="button"
+       data-bs-toggle="dropdown">
           Services
         </a>
+        <li class="nav-item"><a class="nav-link" href="#Review">Review</a></li>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#">News</a>
           <a class="dropdown-item" href="#">Another action</a>
@@ -351,6 +376,7 @@
       <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
     </ul>
   </div>
+</div>
 </nav>
 
 <!-- Home -->
@@ -422,55 +448,138 @@
     </div>
   </div>
 </section>
+ <!-- about -->
+<section class="about-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <div class="green-line"></div>
 
-<!-- About -->
-<div class="container py-5">
-  <div class="row align-items-center">
-    <div class="col-md-6">
-      <div style="width:50px;height:3px;background:green;margin-bottom:20px;"></div>
-      <h2 style="font-weight:bold;">A great medical team to help your needs</h2>
-      <p class="text-muted mt-4">
-       Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus perspiciatis quas minus soluta molestias, ab repellat ex! Et voluptatibus minima distinctio quidem, non autem totam reiciendis praesentium! Assumenda natus nesciunt et
-       accusamus porro eveniet beatae labore, veniam, saepe earum similique.     </p>
-      <button class="btn btn-primary mt-3">READ MORE</button>
-    </div>
+        <h2>A great medical team to help your needs</h2>
 
-    <div class="col-md-6 text-center">
-      <img src="about.png" class="img-fluid" alt="doctors">
+        <p class="text-muted mt-4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque amet vero, perferendis commodi nobis adipisci quidem ab, accusantium deserunt ea autem hic aut optio totam pariatur sit aliquid alias eveniet fugit in cumque harum deleniti expedita. Illum facilis,
+         cupiditate obcaecati ratione itaque ipsa ullam? Assumenda expedita beatae sapiente voluptates aliquid.
+        </p>
+
+        <button class="btn btn-primary mt-3">
+          READ MORE
+        </button>
+      </div>
+
+      <div class="col-md-6 text-center">
+        <img src="about.png" class="img-fluid" alt="doctors">
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- Article Cards -->
-<div class="container my-5">
-  <div class="card-deck">
+<!-- Articles Section -->
+<section class="articles-section">
 
-    <div class="card article-card">
-      <img class="card-img-top" src="img/about/1800x1200_getty_rf_erectile_dysfunction_bigbead.webp">
-      <div class="card-body">
-        <h5 class="card-title">Prostate Cancer and Health Equity</h5>
-        <p class="card-text">Learn about prostate cancer disparities in Black men and how screening, access to care, and advocacy can make a difference.</p>
-      </div>
-    </div>
+  <div class="container">
 
-    <div class="card article-card">
-      <img class="card-img-top" src="img/about/951x634-Cardio-PersStory-Rent-Dancewalk-Group-Dance-Walk.webp">
-      <div class="card-body">
-        <h5 class="card-title">Practical Guidance for Living With AMD</h5>
-        <p class="card-text">From managing treatment to daily tasks and hobbies, discover ways to live well and slow vision changes with AMD.</p>
-      </div>
-    </div>
+    <div class="row g-4">
 
-    <div class="card article-card">
-      <img class="card-img-top" src="img/about/S1_10_sarcopenia-with-aging_1800x1200.webp">
-      <div class="card-body">
-        <h5 class="card-title">Healthy Habits Built for Every Body</h5>
-        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam sequi tenetur at eos similique distinctio atque !</p>
+      <!-- Card 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card article-card h-100">
+
+          <img
+            class="card-img-top"
+            src="img/about/1800x1200_getty_rf_erectile_dysfunction_bigbead.webp"
+            alt="Prostate cancer awareness"
+          >
+
+          <div class="card-body">
+
+            <h5 class="card-title">
+              Prostate Cancer and Health Equity
+            </h5>
+
+            <p class="card-text">
+              Learn about prostate cancer disparities in Black men and how
+              screening, access to care, and advocacy can make a difference.
+            </p>
+
+            <a href="#" class="article-link">
+              Read More
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
       </div>
+
+      <!-- Card 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card article-card h-100">
+
+          <img
+            class="card-img-top"
+            src="img/about/951x634-Cardio-PersStory-Rent-Dancewalk-Group-Dance-Walk.webp"
+            alt="Healthy lifestyle and physical activity"
+          >
+
+          <div class="card-body">
+
+            <h5 class="card-title">
+              Practical Guidance for Living With AMD
+            </h5>
+
+            <p class="card-text">
+              From managing treatment to daily tasks and hobbies, discover ways
+              to live well and slow vision changes with AMD.
+            </p>
+
+            <a href="#" class="article-link">
+              Read More
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card article-card h-100">
+
+          <img
+            class="card-img-top"
+            src="img/about/S1_10_sarcopenia-with-aging_1800x1200.webp"
+            alt="Healthy aging and muscle care"
+          >
+
+          <div class="card-body">
+
+            <h5 class="card-title">
+              Healthy Habits Built for Every Body
+            </h5>
+
+            <p class="card-text">
+              Discover simple and practical healthy habits that support strength,
+              movement, wellness, and a better quality of life at every age.
+            </p>
+
+            <a href="#" class="article-link">
+              Read More
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
     </div>
 
   </div>
-</div>
+
+</section>
 
 <!-- Departments -->
 <section class="departments-section">
